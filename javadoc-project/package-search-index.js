@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"alura.practice.application"},{"l":"alura.practice.model"},{"l":"alura.practice.service"}];updateSearchResults();
