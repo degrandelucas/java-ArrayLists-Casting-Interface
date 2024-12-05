@@ -2,6 +2,7 @@ package alura.practice.application;
 
 import alura.practice.model.Animal;
 import alura.practice.model.Cachorro;
+import alura.practice.model.Produto;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -28,5 +29,26 @@ public class App {
         if (poodle instanceof Cachorro){
             ((Cachorro) poodle).emiteSom();
         }
+
+        System.out.println("");
+        //4- Loop para calculo de preco medio no ArrayList
+        /*
+Crie uma classe Produto com propriedades como nome e preço. Em seguida, crie uma lista de produtos e utilize um loop para calcular e imprimir o preço médio dos produtos. */
+        Produto produto1 = new Produto("Arroz 5kg", 30.52);
+        Produto produto2 = new Produto("Arroz 1kg", 9.30);
+        Produto produto3 = new Produto("Feijao 2kg", 12.69);
+        Produto produto4 = new Produto("Leite", 5.12);
+        Produto produto5 = new Produto("Tomate kg", 3.99);
+
+        ArrayList<Produto> produtos = new ArrayList<>();
+        produtos.addAll(Arrays.asList(produto1, produto2, produto3, produto4, produto5));
+        double  precoMedio = 0;
+        double totalPreco = 0;
+        for (Produto item : produtos){
+            totalPreco += item.getPreco();
+        }
+        precoMedio = totalPreco / produtos.size();
+        System.out.println("A soma dos precos dos produtos da lista atualmente R$ " + totalPreco);
+        System.out.println("O preco medio dos produtos da lista seria R$ " + precoMedio);
     }
 }
