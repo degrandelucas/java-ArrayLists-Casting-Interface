@@ -1,8 +1,7 @@
 package alura.practice.application;
 
-import alura.practice.model.Animal;
-import alura.practice.model.Cachorro;
-import alura.practice.model.Produto;
+import alura.practice.model.*;
+import alura.practice.service.Forma;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -32,8 +31,6 @@ public class App {
 
         System.out.println("");
         //4- Loop para calculo de preco medio no ArrayList
-        /*
-Crie uma classe Produto com propriedades como nome e preço. Em seguida, crie uma lista de produtos e utilize um loop para calcular e imprimir o preço médio dos produtos. */
         Produto produto1 = new Produto("Arroz 5kg", 30.52);
         Produto produto2 = new Produto("Arroz 1kg", 9.30);
         Produto produto3 = new Produto("Feijao 2kg", 12.69);
@@ -50,5 +47,25 @@ Crie uma classe Produto com propriedades como nome e preço. Em seguida, crie um
         precoMedio = totalPreco / produtos.size();
         System.out.println("A soma dos precos dos produtos da lista atualmente R$ " + totalPreco);
         System.out.println("O preco medio dos produtos da lista seria R$ " + precoMedio);
+
+        System.out.println("");
+        //5- uso de Interface e Loop para calculo de area de formas inseridas pelo usuario
+        Quadrado figura1 = new Quadrado(5.2);
+        Quadrado figura2 = new Quadrado(3);
+
+        Circulo figura3 = new Circulo(2);
+        Circulo figura4 = new Circulo(3.5);
+
+        ArrayList<Forma> figuras = new ArrayList<>();
+        //figuras.add((Forma) Arrays.asList(figura1, figura2, figura3, figura4));
+        figuras.add(figura1);
+        figuras.add(figura2);
+        figuras.add(figura3);
+        figuras.add(figura4);
+        for (Forma figura : figuras){
+            System.out.println(String.format("Area do %s : %.2f m²", figura.getClass().getSimpleName(),figura.calculoArea()));
+        }
+
+
     }
 }
