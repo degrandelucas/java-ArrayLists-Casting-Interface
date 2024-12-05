@@ -66,6 +66,27 @@ public class App {
             System.out.println(String.format("Area do %s : %.2f m²", figura.getClass().getSimpleName(),figura.calculoArea()));
         }
 
+        System.out.println("");
+        //6- uso de forEach para encontrar a conta com maior saldo, trabalhando com ArrayList das Contas Bancarias
+        ContaBancaria contaCorrente1 = new ContaBancaria("123-4");
+        contaCorrente1.deposito(500.25);
+        ContaBancaria contaCorrente2 = new ContaBancaria("333-4");
+        contaCorrente2.deposito(125.22);
+        ContaBancaria contaCorrente3 = new ContaBancaria("444-4");
+        contaCorrente3.deposito(1000.00);
+        ContaBancaria contaCorrente4 = new ContaBancaria("555-4");
+        contaCorrente4.deposito(985.90);
+        ArrayList<ContaBancaria> contasCorrente = new ArrayList<>();
+        contasCorrente.addAll(Arrays.asList(contaCorrente1, contaCorrente2, contaCorrente3, contaCorrente4));
+        double saldoMaiorValor = contaCorrente1.getSaldo();
+        String contaComMaiorValor = contaCorrente1.getConta();
+        for (ContaBancaria conta : contasCorrente){
+            if (saldoMaiorValor < conta.getSaldo()) {
+                saldoMaiorValor = conta.getSaldo();
+                contaComMaiorValor = conta.getConta();
+            }
+        }
+        System.out.println(String.format("O maior valor atual entre as contas é R$ %.2f que pertence a conta %s",saldoMaiorValor,contaComMaiorValor));
 
     }
 }
